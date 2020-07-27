@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5DD8AAAF-F079-48DE-8F33-90DFE5927A9D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BobNet</RootNamespace>
+    <AssemblyName>BobNet</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Channels\SerializationResult.cs" />
+    <Compile Include="Channels\StringArrayIndexSyncChannel\SyncableStringArrayChannel.cs" />
+    <Compile Include="Channels\StringArrayIndexSyncChannel\SyncableStringArray.cs" />
+    <Compile Include="NetManager\Public Events\ClientConnectedEvent.cs" />
+    <Compile Include="NetManager\Public Events\ClientDisconnectedEvent.cs" />
+    <Compile Include="NetManager\Public Events\ConnectionCompleteEvent.cs" />
+    <Compile Include="NetManager\Public Events\DisconnectedSelfEvent.cs" />
+    <Compile Include="NetManager\Public Events\NetEvent.cs" />
+    <Compile Include="Internal Data Structures\Enums\ConnectionResultType.cs" />
+    <Compile Include="Internal Data Structures\Enums\ManagerEventType.cs" />
+    <Compile Include="NetManager\ConnectionState.cs" />
+    <Compile Include="Exceptions\IncorrectManagerStateException.cs" />
+    <Compile Include="Internal Data Structures\Structs\TcpClientDisconnectEvent.cs" />
+    <Compile Include="Internal Data Structures\Structs\TcpConnectionCompleteEvent.cs" />
+    <Compile Include="SendMode.cs" />
+    <Compile Include="Internal Data Structures\Structs\ManagerEvent.cs" />
+    <Compile Include="Channels\NetChannel.cs" />
+    <Compile Include="NetClient.cs" />
+    <Compile Include="NetManager\NetManager.Client.cs" />
+    <Compile Include="NetManager\NetManager.cs" />
+    <Compile Include="NetManager\NetManager.Server.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Side.cs" />
+    <Compile Include="Internal Data Structures\Structs\Packet.cs" />
+    <Compile Include="Internal Data Structures\Structs\UdpHandshakeAttemptEvent.cs" />
+    <Compile Include="Internal Data Structures\Structs\UdpHandshakeUpdateEvent.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
